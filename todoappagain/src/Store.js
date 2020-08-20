@@ -21,6 +21,10 @@ export default new Vuex.Store({
             // 通常はindexOfだが、連想配列の時はfindIndexでインデックス番号取得。
             let index = state.tasks.findIndex(task => task.title === title);
             state.tasks.splice(index, 1);
+        },
+        completeTask(state, title) {
+            let index = state.tasks.findIndex(task => task.title === title);
+            state.tasks[index]["title"] = "Done!!";
         }
     }
 })
