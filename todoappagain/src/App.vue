@@ -5,6 +5,12 @@
       <input type="text" required/>
       <input type="submit" value="ADD" />
     </form>
+    <ul>
+      <li>
+        <input type="button" value="DONE!" />
+        <input type="button" value="DELETE" />
+      </li>
+    </ul>
   </div>
 </template>
 
