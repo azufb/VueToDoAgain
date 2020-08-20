@@ -8,7 +8,7 @@
     <ul v-for="( task, index ) in tasks" :key="index">
       <li>
         {{ task.title }}
-        <input type="button" value="DONE" v-on:click="completeTask"/>
+        <input type="button" value="DONE" v-on:click="completeTask(task.title)" />
         <input type="button" value="DELETE" v-on:click="deleteTask(task.title)" />
       </li>
     </ul>
@@ -26,8 +26,7 @@ export default {
   },
   data() {
     return {
-      title: '',
-      isActive: 'true'
+      title: ''
     }
   },
   methods: {
@@ -42,8 +41,8 @@ export default {
     deleteTask(title) {
       this.$store.commit("deleteTask", title);
     },
-    completeTask()  {
-      this.$store.commit("completeTask");
+    completeTask(title)  {
+      this.$store.commit("completeTask", title);
     }
   }
 }
@@ -61,6 +60,10 @@ export default {
 
 ul li {
   list-style: none;
+}
+
+div.is_done {
+  background-color: #d3d3d3;
 }
 
 .taskShow {
