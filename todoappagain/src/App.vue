@@ -75,4 +75,8 @@ ul li {
 footer {
   margin-top: auto;
 }
+
+footer p {
+  margin-bottom: 0px;
+}
 </style>
