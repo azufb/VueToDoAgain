@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>ToDoApp</h1>
-    <form>
+    <form v-on:submit.prevent="onclick">
       <input type="text" required/>
       <input type="submit" value="ADD" />
     </form>
@@ -18,7 +18,12 @@
 
 export default {
   name: 'App',
-  components: {
+  methods: {
+    onclick() {
+      this.$store.commit("addTask", {
+        title: this.title
+      });
+    }
   }
 }
 </script>
