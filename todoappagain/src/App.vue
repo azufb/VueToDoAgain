@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    
+    <h1>ToDoApp</h1>
+    <form>
+      <input type="text" required/>
+      <input type="submit" value="ADD" />
+    </form>
   </div>
 </template>
 
