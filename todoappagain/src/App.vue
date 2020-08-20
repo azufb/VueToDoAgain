@@ -8,8 +8,8 @@
     <ul v-for="( task, index ) in tasks" :key="index">
       <li>
         {{ task.title }}
-        <input type="button" value="DONE!" />
-        <input type="button" value="DELETE" />
+        <input type="button" value="DONE!"/>
+        <input type="button" value="DELETE" v-on:click="deleteTask(task.title)" />
       </li>
     </ul>
   </div>
@@ -36,6 +36,9 @@ export default {
           title: this.title
         } 
       });
+    },
+    deleteTask(title) {
+      this.$store.commit("deleteTask", title);
     }
   }
 }
