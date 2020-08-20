@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>ToDoApp</h1>
+    <h1>ToDo Manager</h1>
     <form v-on:submit.prevent="onclick">
       <div class="inputForm">
         <input type="text" id="title" v-model="title" required/>
