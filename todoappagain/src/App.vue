@@ -10,9 +10,9 @@
     <ul v-for="( task, index ) in tasks" :key="index">
       <li>
         {{ task.title }}
-        <input type="button" value="DONE" v-on:click="completeTask(task.title)" />
-        <input type="button" value="DELETE" v-on:click="deleteTask(task.title)" />
       </li>
+      <input class="compBtn" type="button" value="DONE" v-on:click="completeTask(task.title)" />
+      <input class="delBtn" type="button" value="DELETE" v-on:click="deleteTask(task.title)" />
     </ul>
   </div>
 </template>
@@ -68,8 +68,31 @@ export default {
   margin-bottom: 15px;
 }
 
+ul {
+  margin-left: 350px;
+  margin-right: 100px;
+  display: flex;
+}
+
 ul li {
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 60px;
+  width: 500px;
   list-style: none;
+  background-color: #d3d3d3;
+  overflow: scroll;
+}
+
+.compBtn {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.delBtn {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 footer {
