@@ -2,7 +2,9 @@
   <div id="app">
     <h1>ToDoApp</h1>
     <form v-on:submit.prevent="onclick">
-      <input type="text" id="title" v-model="title" required/>
+      <div class="inputForm">
+        <input type="text" id="title" v-model="title" required/>
+      </div>
       <input type="submit" value="ADD" />
     </form>
     <ul v-for="( task, index ) in tasks" :key="index">
@@ -50,23 +52,27 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.inputForm {
+  width: 100%;
+}
+
+.inputForm input {
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 15px;
 }
 
 ul li {
   list-style: none;
 }
 
-div.is_done {
-  background-color: #d3d3d3;
-}
-
-.taskShow {
-  border-bottom: 1px solid black;
+footer {
+  margin-top: auto;
 }
 </style>
