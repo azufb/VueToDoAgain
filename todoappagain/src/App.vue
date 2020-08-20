@@ -2,11 +2,12 @@
   <div id="app">
     <h1>ToDoApp</h1>
     <form v-on:submit.prevent="onclick">
-      <input type="text" required/>
+      <input type="text" id="title" v-model="title" required/>
       <input type="submit" value="ADD" />
     </form>
-    <ul>
+    <ul v-for="( task, index ) in tasks" :key="index">
       <li>
+        {{ task.title }}
         <input type="button" value="DONE!" />
         <input type="button" value="DELETE" />
       </li>
@@ -18,10 +19,22 @@
 
 export default {
   name: 'App',
+  computed: {
+    tasks() {
+      return this.$store.getters.tasks;
+    }
+  },
+  data() {
+    return {
+      title: ''
+    }
+  },
   methods: {
     onclick() {
       this.$store.commit("addTask", {
-        title: this.title
+        task: {
+          title: this.title
+        } 
       });
     }
   }
