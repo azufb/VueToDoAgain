@@ -5,11 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        tasks: [
-            {
-                title: 'お弁当を買う。'
-            }
-        ]
+        tasks: []
     },
     getters: {
         tasks(state) {
