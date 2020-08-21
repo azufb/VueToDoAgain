@@ -6,7 +6,7 @@
       <div class="inputForm">
         <input type="text" id="title" v-model="title" required/>
       </div>
-      <input class="addBtn" type="submit" value="＋" />
+      <input class="addBtn" type="submit" value="ADD" />
     </form>
     <ul v-for="( task, index ) in tasks" :key="index">
       <li>
