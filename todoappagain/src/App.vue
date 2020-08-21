@@ -2,12 +2,11 @@
   <div id="app">
     <h1>ToDo Manager</h1>
     <p>長文は、左右のスクロールで読むことができます！</p>
-    <p>(iPhone Xでは、DONE・DELETEボタンはタスクの右下に表示されます。)</p>
     <form v-on:submit.prevent="onclick">
       <div class="inputForm">
         <input type="text" id="title" v-model="title" required/>
       </div>
-      <input type="submit" value="ADD" />
+      <input class="addBtn" type="submit" value="ADD" />
     </form>
     <ul v-for="( task, index ) in tasks" :key="index">
       <li>
@@ -54,7 +53,6 @@ export default {
 
 <style>
 #app {
-  text-align: center;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -71,8 +69,6 @@ export default {
 }
 
 ul {
-  margin-left: 200px;
-  margin-right: 100px;
   display: flex;
 }
 
@@ -116,6 +112,7 @@ footer p {
   margin-bottom: 15px;
 }
 
+
 ul {
   margin: 0px;
   display: inline
@@ -123,7 +120,6 @@ ul {
 
 ul li {
   width: 280px;
-  margin-left: 10px;
   margin-right: 0px;
   list-style: none;
   background-color: #d3d3d3;
@@ -132,12 +128,11 @@ ul li {
 
 .compBtn {
   margin-top: 0px;
-  margin-left: 5px;
+  margin-left: 0px;
 }
 
 .delBtn {
   margin-top: 0px;
-  margin-left: 0px;
 }
 
 }
