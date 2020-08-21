@@ -112,7 +112,6 @@ footer p {
   margin-bottom: 15px;
 }
 
-
 ul {
   margin: 0px;
   display: inline
