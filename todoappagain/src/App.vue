@@ -6,7 +6,7 @@
       <div class="inputForm">
         <input type="text" id="title" v-model="title" required/>
       </div>
-      <input class="addBtn" type="submit" value="ADD" />
+      <input class="addBtn" type="submit" value="＋" />
     </form>
     <ul v-for="( task, index ) in tasks" :key="index">
       <li>
@@ -111,7 +111,6 @@ footer p {
   margin: 0 auto;
   margin-bottom: 15px;
 }
-
 
 ul {
   margin: 0px;
