@@ -13,7 +13,7 @@
         {{ task.title }}
       </li>
       <input class="compBtn" type="button" value="DONE" v-on:click="completeTask(task.title)" />
-      <input class="delBtn" type="button" value="DELETE" v-on:click="deleteTask(task.title)" />
+      <input class="delBtn" type="button" value="DELETE" v-on:click="deleteTask(task.id)" />
     </ul>
   </div>
 </template>
@@ -29,20 +29,22 @@ export default {
   },
   data() {
     return {
-      title: ''
+      title: '',
+      id: ''
     }
   },
   methods: {
     onclick() {
       this.$store.commit("addTask", {
         task: {
-          title: this.title
+          title: this.title,
+          id: new Date()
         } 
       });
       this.title = '';
     },
-    deleteTask(title) {
-      this.$store.commit("deleteTask", title);
+    deleteTask(id) {
+      this.$store.commit("deleteTask", id);
     },
     completeTask(title)  {
       this.$store.commit("completeTask", title);

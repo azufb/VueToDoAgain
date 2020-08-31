@@ -17,10 +17,10 @@ export default new Vuex.Store({
         addTask(state, payload) {
             state.tasks.push(payload.task);
         },
-        deleteTask(state, title) {
+        deleteTask(state, id) {
             // インデックス番号を取得し、spliceメソッドで1つ削除。
             // 通常はindexOfだが、連想配列の時はfindIndexでインデックス番号取得。
-            let index = state.tasks.findIndex(task => task.title === title);
+            let index = state.tasks.findIndex(task => task.id === id);
             state.tasks.splice(index, 1);
         },
         completeTask(state, title) {
