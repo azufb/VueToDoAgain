@@ -1,19 +1,19 @@
 <template>
-  <div id="app">
+  <div id='app'>
     <h1>ToDo Manager</h1>
     <p>長文は、左右のスクロールで読むことができます！</p>
     <form v-on:submit.prevent="onclick">
-      <div class="inputForm">
-        <input type="text" id="title" v-model="title" required/>
+      <div class='inputForm'>
+        <input type='text' id='title' v-model='title' required/>
       </div>
-      <input class="addBtn" type="submit" value="ADD" />
+      <input class='addBtn' type='submit' value='ADD' />
     </form>
-    <ul v-for="( task, index ) in tasks" :key="index">
+    <ul v-for='( task, index ) in tasks' :key='index'>
       <li>
         {{ task.title }}
       </li>
-      <input class="compBtn" type="button" value="DONE" v-on:click="completeTask(task.title)" />
-      <input class="delBtn" type="button" value="DELETE" v-on:click="deleteTask(task.id)" />
+      <input class='compBtn' type='button' value='DONE' v-on:click='completeTask(task.title)' />
+      <input class='delBtn' type='button' value='DELETE' v-on:click='deleteTask(task.id)' />
     </ul>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     onclick() {
-      this.$store.commit("addTask", {
+      this.$store.commit('addTask', {
         task: {
           title: this.title,
           id: new Date()
@@ -44,10 +44,10 @@ export default {
       this.title = '';
     },
     deleteTask(id) {
-      this.$store.commit("deleteTask", id);
+      this.$store.commit('deleteTask', id);
     },
     completeTask(title)  {
-      this.$store.commit("completeTask", title);
+      this.$store.commit('completeTask', title);
     }
   }
 }
