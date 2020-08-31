@@ -25,7 +25,7 @@ export default new Vuex.Store({
         },
         completeTask(state, title) {
             let index = state.tasks.findIndex(task => task.title === title);
-            state.tasks[index]["title"] = "Done!!";
+            state.tasks[index]['title'] = 'Done!!';
         }
     },
     plugins: [createPersistedState()],
